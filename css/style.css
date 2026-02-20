@@ -1,0 +1,159 @@
+@charset "utf-8";
+body,
+html {
+    padding: 0;
+    margin: 0;
+    background-color: #040427;
+    min-width: 471px;
+    /* definir la taille inferieur à 480px */
+    overflow-x: auto;
+    /*permetre le defilement horizontal*/
+}
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+
+/*header*/
+
+.header {
+    background-color: #837df3;
+    height: 70px;
+    line-height: 70px;
+}
+
+h2 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.logo {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: italic;
+    letter-spacing: 1px;
+    float: left;
+}
+
+.menu {
+    float: right;
+}
+
+.menu a {
+    color: #ffffff;
+    margin-right: 20px;
+}
+
+.menu a:hover {
+    color: #0000ff;
+}
+
+
+/*banniere*/
+
+.banner {
+    width: 100%;
+    max-width: 100%;
+}
+
+.ban {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+}
+
+.ban img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.inner-banner {
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+}
+
+
+/*inner-banner en position absolue pour les ecrans < 471px*/
+
+@media (max-width: 471px) {
+    .inner-banner {
+        position: absolute;
+        top: 220px;
+        left: 0px;
+    }
+}
+
+.inner-banner h1 {
+    color: #ffffff;
+    text-shadow: 1px 1px 30px #000000;
+}
+
+.btn-custom {
+    background-color: #837df3;
+    color: #ffffff;
+}
+
+.btn-custom:hover {
+    background-color: #0000ff;
+}
+
+section {
+    background-color: #ffffff;
+}
+
+
+/*about*/
+
+.about h3 {
+    text-align: center;
+}
+
+.about p {
+    text-align: justify;
+}
+
+.about .competence p {
+    text-align: center;
+}
+
+
+/*portfolio*/
+
+.portfolio {
+    background-color: #b7b4f9;
+}
+
+article {
+    text-align: center;
+}
+
+article img {
+    width: 100%;
+    height: 90%;
+    max-width: 100%;
+}
+
+
+/*contact*/
+
+footer {
+    background-color: #040427;
+}
+
+footer h2 {
+    color: #ffffff;
+}
+
+footer p {
+    text-align: center;
+    color: #ffffff;
+}
