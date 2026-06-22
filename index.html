@@ -1,114 +1,116 @@
-git<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Gifted Nassy" />
+    <title>Mon Portfolio Professionnel</title>
+    <!-- Liens CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>gifted nassy</title>
+    <!-- FontAwesome pour des icônes modernes (Réseaux sociaux) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
-    <!--header-->
-    <header class="container-fluid header">
-        <div class="container">
-            <a href="#accueil" class="logo" id="accueil">GIFTED NASSY</a>
-            <button id="btnMenu">☰ Menu</button>
-            <nav id="menu">
-                <a href="#accueil">Accueil</a>
-                <a href="#about">A propos</a>
-                <a href="#portfolio_images">Images</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
-    <!--end header-->
 
-    <!--banière-->
-    <section class="container-fluid banner">
-        <div class="ban">
-            <img src="images/ban.webp" alt="Bannière du site" />
+    <!-- Barre de Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">MonPortfolio</a>
+            <button class="navbar-toggler" type="button" id="menuToggle" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-section nav-link" href="#hero">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-section nav-link" href="#about">À propos</a></li>
+                    <li class="nav-item"><a class="nav-section nav-link" href="#projects">Projets</a></li>
+                    <li class="nav-item"><a class="nav-section nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="inner-banner">
-            <h1>Bienvenue sur mon portefolio</h1>
-            <a class="btn btn-custom btn-lg" href="#contact">Contactez moi !</a>
+    </nav>
+
+    <!-- Section Hero (Bannière d'accueil) -->
+    <section id="hero" class="hero-section d-flex align-items-center text-center text-white" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/ban.webp') no-repeat center center/cover;">
+        <div class="container">
+            <h1 class="display-3 fw-bold">Bonjour, je suis un Ingénieur Passionné</h1>
+            <p class="lead">Développement, Conception & Solutions Technologiques</p>
+            <a href="#projects" class="btn btn-primary btn-lg mt-3">Voir mes réalisations</a>
         </div>
     </section>
-    <!--en banière-->
 
-    <!--A propos -->
-    <section class="container-fluid about my-5">
+    <!-- Section À Propos -->
+    <section id="about" class="py-5">
         <div class="container">
-            <div class="row">
-                <h2 id="about">A propos</h2>
-
-                <article class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-                    <h3>Etudes</h3>
-                    <p>Gifetd Nassy, étudiant en génie informatique à l’ULPGL/Goma et ancien élève de l’institut Kambali (collège Pix X), je suis passionné par le développement web et les systèmes informatiques. Je développe des projets dans le but de devenir
-                        ingénieur full stack.</p>
-                </article>
-                <article class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-                    <h3>Compéntences</h3>
-                    <div class="competence">
-                        <p>
-                            création de sites web responsives<br /> intégration HTML, CSS, Bootstrap
-                        </p>
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center mb-4 mb-md-0">
+                    <img src="images/profil-converti.webp" alt="Photo de profil" class="img-fluid rounded-circle shadow-lg profile-img">
+                </div>
+                <div class="col-md-8">
+                    <h2 class="fw-bold mb-3">À propos de moi</h2>
+                    <p class="text-muted">Actuellement étudiant et concepteur de projets techniques, je combine théorie rigoureuse et compétences pratiques (programmation, modélisation et développement) pour concevoir des applications intelligentes et des architectures robustes.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="btn btn-outline-dark"><i class="fas fa-download me-2"></i>Télécharger mon CV</a>
                     </div>
-                </article>
-                <article class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                    <h3>Hobbies & Centre d'intérèt</h3>
-                    <p>
-                        Développement de projets informatiques personnels : Conception et réalisation de solutions pratiques répondant à des besoins réels. Veille technologies et apprentissage continu : suivi des nouvelles technologies afin de proposer des solutions modernes,
-                        efficaces. Résolution de problèmes et algorithmique : analyse logique des problématiques pour concevoir des solutions optimisées et fiables.
-                    </p>
-                </article>
-
-            </div>
-        </div>
-    </section>
-    <!-- end a propos -->
-
-    <!-- portfolio-->
-    <section class="container-fluid m-0 px-3">
-        <div class="container  ">
-            <div class="row">
-                <h2 id="portfolio_images">Images</h2>
-                <article class="img-folio  col-md-4 col-lg-4 col-sm-12 col-xs-12">
-                    <img src="images/profil-converti.webp" alt="mon profil">
-                </article>
-                <article class="img-folio  col-md-4 col-lg-4 col-sm-12 col-xs-12">
-                    <img src="images/ecouteur-converti.webp" alt="image site vitrine pour ecouteur">
-                </article>
-                <article class="img-folio  col-md-4 col-lg-4 col-sm-12 col-xs-12">
-                    <img src="images/bbo-converti.webp" alt="image site vitrine Butembo ville">
-                </article>
-            </div>
-        </div>
-    </section>
-    <!--end portfolio-->
-
-    <!--footer / contact-->
-    <footer class="container-fluid">
-        <div class="container">
-            <div class="row">
-                <h2 id="contact">Contactez-moi !</h2>
-                <div class="span6">
-                    <p>
-                        <a href="https://wa.me/243995658043"><img src="images/whatsapp.png" alt="mon whatsapp" width="30px" height="30px" title="contact" /> </a>
-                        <a href="https://facebook.com/Gifted_NSG_Sikiminywa"> <img src="images/facebook-converti.webp" alt="mon facebook" width="30px" height="30px" /> </a>
-                    </p>
                 </div>
             </div>
-            <p>&copy;2026-GIFTED NASSY</p>
         </div>
-    </footer>
-    <!--end footer /contact-->
+    </section>
 
-    <!-- javascript files -->
+    <!-- Section Projets (Portfolio) -->
+    <section id="projects" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5">Mes Projets Récents</h2>
+            <div class="row g-4">
+                <!-- Projet 1 -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="images/bbo-converti.webp" class="card-img-top" alt="Projet 1">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Application Domotique / Java</h5>
+                            <p class="card-text text-muted">Développement d'une logique applicative et d'interfaces de contrôle à distance via protocole réseau local.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projet 2 -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="images/ecouteur-converti.webp" class="card-img-top" alt="Projet 2">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Scripts d'Automatisation</h5>
+                            <p class="card-text text-muted">Création de solutions shell personnalisées pour la gestion de bases de données et de fichiers utilisateurs.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projet 3 -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="images/ban.webp" class="card-img-top" alt="Projet 3">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Modélisation Numérique</h5>
+                            <p class="card-text text-muted">Résolution de problèmes complexes et d'algorithmes mathématiques à l'aide de solveurs numériques interactifs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="py-5 bg-dark text-white">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-4">Me Contacter</h2>
+            <p class="mb-4 text-muted">Une idée de projet, une collaboration ou une opportunité de stage ? Écrivez-moi !</p>
+            <div class="d-flex justify-content-center gap-4 fs-3 mb-4">
+                <a href="#" class="text-white hover-link"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-white hover-link"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="text-white hover-link"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="text-muted small mb-0">&copy; 2026 - Tous droits réservés.</p>
+        </div>
+    </section>
+
+    <!-- Scripts JavaScript -->
     <script src="DocJavaScript/menu.js"></script>
-    <!-- ens javascript files -->
 </body>
-
 </html>
