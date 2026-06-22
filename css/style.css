@@ -42,18 +42,39 @@ h2 {
     float: left;
 }
 
-.menu {
-    float: right;
+
+#menu{
+    width: 100px;
+    background: #333;
+    overflow: auto; /* defini le comportement des elements du block*/
+    max-height: 0;
+    transition: max-height 0.3s ease;
+    }
+
+#menu.active{
+    max-height: 300px;
 }
 
-.menu a {
-    color: #ffffff;
-    margin-right: 20px;
+#menu a{
+    display: block; /*occupe toute la larger disponible*/
+    color: white;
+    padding: 10px;
+    text-decoration: none;
 }
 
-.menu a:hover {
-    color: #0000ff;
+#menu a:hover{
+    background-color: #3b0f0f;
 }
+
+#menu a:active{
+    background-color: #1d0f3b;
+}
+
+#btnMenu{
+    padding: 10px;
+    cursor: pointer; /*afficher un main quand la souris passe sur l'element btnmenu*/
+}
+
 
 
 /*banniere*/
