@@ -1,181 +1,249 @@
-@charset "utf-8";
-body,
+/* ==========================================================================
+   1. VARIABLES & CONFIGURATION GENERALE
+   ========================================================================== */
+:root {
+    --primary-color: #007bff;      /* Bleu professionnel moderne */
+    --primary-hover: #0056b3;      /* Bleu plus foncé pour les survols */
+    --dark-color: #1a1a1a;         /* Noir adouci pour le texte et fonds sombres */
+    --light-bg: #f8f9fa;           /* Gris très clair pour casser la monotonie */
+    --text-muted: #6c757d;         /* Gris pour les textes secondaires */
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --card-shadow-hover: 0 15px 30px rgba(0, 0, 0, 0.12);
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Défilement fluide lors des clics sur le menu */
 html {
-    padding: 0;
-    margin: 0;
-    background-color: #040427;
-    min-width: 471px;
-    /* definir la taille inferieur à 480px */
-    overflow-x: auto;
-    /*permetre le defilement horizontal*/
-    z-index:5;
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px; /* Évite que la navbar fixe ne cache le haut des sections */
 }
 
-a,
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--dark-color);
+    background-color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden; /* Empêche le scroll horizontal indésirable */
+}
+
+/* Liens globaux */
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: var(--transition-smooth);
+}
+
 a:hover {
-    text-decoration: none;
+    color: var(--primary-hover);
 }
 
-.container-fluid {
-    padding: 0;
+/* ==========================================================================
+   2. BARRE DE NAVIGATION (NAVBAR)
+   ========================================================================== */
+.navbar {
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: var(--transition-smooth);
 }
 
-
-/*header*/
-
-.header {
-    background-color: #837df3;
-    height: 70px;
-    line-height: 70px;
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
 }
 
-h2 {
-    text-align: center;
-    font-weight: bold;
-}
-
-.logo {
-    color: #ffffff;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-family: italic;
-    letter-spacing: 1px;
-    float: left;
-}
-
-
-#menu{
-    width: 100px;
-    background: #333;
-    overflow: auto; /* defini le comportement des elements du block*/
-    max-height: 0;
-    transition: max-height 0.3s ease;
-    }
-
-#menu.active{
-    max-height: 300px;
-}
-
-#menu a{
-    display: block; /*occupe toute la larger disponible*/
-    color: white;
-    padding: 10px;
-    text-decoration: none;
-}
-
-#menu a:hover{
-    background-color: #3b0f0f;
-}
-
-#menu a:active{
-    background-color: #1d0f3b;
-}
-
-#btnMenu{
-    padding: 10px;
-    cursor: pointer; /*afficher un main quand la souris passe sur l'element btnmenu*/
-}
-
-
-
-/*banniere*/
-
-.banner {
-    width: 100%;
-    max-width: 100%;
-}
-
-.ban {
-    width: 100%;
-    max-width: 100%;
+.nav-link {
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
     position: relative;
 }
 
-.ban img {
-    width: 100%;
-    max-width: 100%;
-}
-
-.inner-banner {
-    top: 50%;
-    width: 100%;
-    text-align: center;
+/* Animation de soulignement au survol des liens du menu */
+.nav-link::after {
+    content: '';
     position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 10px;
+    background-color: var(--primary-color);
+    transition: var(--transition-smooth);
 }
 
+.nav-link:hover::after {
+    width: calc(100% - 20px);
+}
 
-/*inner-banner en position absolue pour les ecrans < 471px*/
+/* Ajustement pour le bouton mobile */
+.navbar-toggler {
+    border: none;
+    outline: none !important;
+}
 
-@media (max-width: 471px) {
-    .inner-banner {
-        position: absolute;
-        top: 220px;
-        left: 0px;
+/* ==========================================================================
+   3. SECTION HERO (ACCUEIL / BANNIERE)
+   ========================================================================== */
+.hero-section {
+    min-height: 85vh;
+    padding: 120px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-section h1 {
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    opacity: 0.9;
+}
+
+/* Boutons personnalisés */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    padding: 12px 30px;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: var(--transition-smooth);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+}
+
+/* ==========================================================================
+   4. SECTION À PROPOS
+   ========================================================================== */
+.profile-img {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    border: 6px solid #ffffff;
+    transition: var(--transition-smooth);
+}
+
+.profile-img:hover {
+    transform: scale(1.03);
+}
+
+.btn-outline-dark {
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-weight: 600;
+    border-width: 2px;
+    transition: var(--transition-smooth);
+}
+
+.btn-outline-dark:hover {
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   5. SECTION PROJETS (CARTES)
+   ========================================================================== */
+.bg-light {
+    background-color: var(--light-bg) !important;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition-smooth);
+    will-change: transform, box-shadow; /* Optimise les performances d'animation */
+}
+
+/* Effet d'élévation pro au survol d'un projet */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--card-shadow-hover) !important;
+}
+
+.card-img-top {
+    height: 220px;
+    object-fit: cover;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* ==========================================================================
+   6. SECTION CONTACT & FOOTER
+   ========================================================================== */
+#contact {
+    background-color: var(--dark-color) !important;
+}
+
+/* Liens des réseaux sociaux */
+.hover-link {
+    color: #ffffff !important;
+    display: inline-block;
+    transition: var(--transition-smooth);
+}
+
+.hover-link:hover {
+    color: var(--primary-color) !important;
+    transform: translateY(-5px) scale(1.1);
+}
+
+/* Petits textes de droits d'auteur */
+.text-muted.small {
+    color: #a0a0a0 !important;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   7. MEDIA QUERIES (OPTIMISATIONS MOBILE & TABLETTE)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 70vh;
+        padding: 80px 0;
     }
-}
 
-.inner-banner h1 {
-    color: #ffffff;
-    text-shadow: 1px 1px 30px #000000;
-}
+    .hero-section h1 {
+        font-size: 2.2rem !important;
+    }
 
-.btn-custom {
-    background-color: #837df3;
-    color: #ffffff;
-}
-
-.btn-custom:hover {
-    background-color: #0000ff;
-}
-
-section {
-    background-color: #ffffff;
-}
-
-
-/*about*/
-
-.about h3 {
-    text-align: center;
-}
-
-.about p {
-    text-align: justify;
-}
-
-.about .competence p {
-    text-align: center;
-}
-
-
-/*portfolio*/
-
-.portfolio {
-    background-color: #b7b4f9;
-}
-
-article {
-    text-align: center;
-}
-
-article img {
-    width: 100%;
-    height: 90%;
-    max-width: 100%;
-}
-
-
-/*contact*/
-
-footer {
-    background-color: #040427;
-}
-
-footer h2 {
-    color: #ffffff;
-}
-
-footer p {
-    text-align: center;
-    color: #ffffff;
+    .profile-img {
+        width: 180px;
+        height: 180px;
+        margin-bottom: 20px;
+    }
+    
+    /* Supprime l'effet de survol gênant sur les écrans tactiles */
+    .card:hover {
+        transform: none;
+        box-shadow: var(--card-shadow) !important;
+    }
+    
+    /* Ajustement de la navbar mobile */
+    .navbar-collapse {
+        background-color: rgba(26, 26, 26, 0.98);
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
+    
+    .nav-link::after {
+        display: none; /* Désactive l'effet de ligne sous le menu sur mobile */
+    }
 }
