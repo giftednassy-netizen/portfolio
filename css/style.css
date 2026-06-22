@@ -8,6 +8,7 @@ html {
     /* definir la taille inferieur à 480px */
     overflow-x: auto;
     /*permetre le defilement horizontal*/
+    z-index:5;
 }
 
 a,
