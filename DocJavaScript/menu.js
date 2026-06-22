@@ -1,20 +1,20 @@
-const btnMenu = document.getElementById("btnMenu");
-const menu = document.getElementById("menu");
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menuToggle");
+    const navbarNav = document.getElementById("navbarNav");
 
-// Ouvrir/Fermer avec le bouton
-btnMenu.addEventListener("click", function(event) {
-    menu.classList.toggle("active");
+    if (menuToggle && navbarNav) {
+        menuToggle.addEventListener("click", () => {
+            navbarNav.classList.toggle("show");
+        });
+    }
 
-    // Empêche le clic de remonter jusqu'au document
-    event.stopPropagation();
-});
-
-// Empêche la fermeture lorsqu'on clique dans le menu
-menu.addEventListener("click", function(event) {
-    event.stopPropagation();
-});
-
-// Ferme le menu lorsqu'on clique ailleurs sur la page
-document.addEventListener("click", function() {
-    menu.classList.remove("active");
+    // Fermer automatiquement le menu mobile lorsqu'un lien est cliqué
+    const navLinks = document.querySelectorAll(".nav-link");
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            if (navbarNav.classList.contains("show")) {
+                navbarNav.classList.remove("show");
+            }
+        });
+    });
 });
