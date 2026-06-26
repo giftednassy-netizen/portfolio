@@ -70,6 +70,10 @@ a:hover {
     transition: var(--transition-smooth);
 }
 
+.navbar-brand{
+   translate:no;
+}
+
 .nav-link:hover::after {
     width: calc(100% - 20px);
 }
